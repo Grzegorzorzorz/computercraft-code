@@ -68,6 +68,7 @@ function digLayer(southpaw)
 			end
 		end
 	end
+	digLine(mineLength - 2)
 end
 
 function digLine(length)
