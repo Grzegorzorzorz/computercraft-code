@@ -19,7 +19,6 @@ function main()
 end
 
 function digQuarry()
-	local southpaw = false
 	local isBlock = false
 	for i = 0, (startingHeight - endHeight) - 2, 1 do
 		isBlock = turtle.inspectDown()
@@ -27,47 +26,24 @@ function digQuarry()
 			turtle.digDown()
 		end
 		turtle.down()
-		digLayer(southpaw)
+		digLayer()
 		turtle.turnRight()
 		turtle.turnRight()
-		if mineWidth % 2 == 1 then
-			if southpaw == false then
-				southpaw = true
-			else
-				southpaw = false
-			end
-		end
 	end
 end
 
-function digLayer(southpaw)
-	if southpaw == false then
-		for i = 0, mineWidth - 2, 1 do
-			if i % 2 == 0 then
-				digLine(mineLength - 2)
-				turtle.turnRight()
-				digForwards()
-				turtle.turnRight()
-			else
-				digLine(mineLength - 2)
-				turtle.turnLeft()
-				digForwards()
-				turtle.turnLeft()
-			end
-		end
-	else
-		for i = 0, mineWidth - 2, 1 do
-			if i % 2 == 0 then
-				digLine(mineLength - 2)
-				turtle.turnLeft()
-				digForwards()
-				turtle.turnLeft()
-			else
-				digLine(mineLength - 2)
-				turtle.turnRight()
-				digForwards()
-				turtle.turnRight()
-			end
+function digLayer()
+	for i = 0, mineWidth - 2, 1 do
+		if i % 2 == 0 then
+			digLine(mineLength - 2)
+			turtle.turnRight()
+			digForwards()
+			turtle.turnRight()
+		else
+			digLine(mineLength - 2)
+			turtle.turnLeft()
+			digForwards()
+			turtle.turnLeft()
 		end
 	end
 	digLine(mineLength - 2)
