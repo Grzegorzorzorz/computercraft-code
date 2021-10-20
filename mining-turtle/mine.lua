@@ -28,6 +28,8 @@ function digQuarry()
 		end
 		turtle.down()
 		digLayer(southpaw)
+		turtle.turnRight()
+		turtle.turnRight()
 		if mineWidth % 2 == 1 then
 			if southpaw == false then
 				southpaw = true
