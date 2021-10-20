@@ -21,12 +21,12 @@ end
 function digQuarry()
 	local southpaw = false
 	local isBlock = false
-	isBlock = turtle.inspectDown()
-	if isBlock then
-		turtle.digDown()
-	end
-	turtle.down()
 	for i = 0, (startingHeight - endHeight) - 2, 1 do
+		isBlock = turtle.inspectDown()
+		if isBlock then
+			turtle.digDown()
+		end
+		turtle.down()
 		digLayer(southpaw)
 		if mineWidth % 2 == 1 then
 			if southpaw == false then
