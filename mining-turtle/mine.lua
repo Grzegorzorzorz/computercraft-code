@@ -21,7 +21,7 @@ end
 function digQuarry()
 	local southpaw = false
 	for i = 0, (startingHeight - endHeight), 1 do
-		digLayer()
+		digLayer(southpaw)
 		if mineWidth % 2 == 1 then
 			if southpaw == false then
 				southpaw = true
@@ -35,10 +35,17 @@ end
 function digLayer(southpaw)
 	if southpaw == false then
 		for i = 0, mineWidth, 1 do
-			digLine(mineLength - 1)
-			turtle.turnRight()
-			digForwards()
-			turtle.turnRight()
+			if i % 2 == 0 then
+				digLine(mineLength - 1)
+				turtle.turnRight()
+				digForwards()
+				turtle.turnRight()
+			else
+				digLine(mineLength - 1)
+				turtle.turnLeft()
+				digForwards()
+				turtle.turnLeft()
+			end
 		end
 	else
 		for i = 0, mineWidth, 1 do
