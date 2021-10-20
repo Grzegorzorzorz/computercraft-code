@@ -48,12 +48,17 @@ function digLayer(southpaw)
 			end
 		end
 	else
-		for i = 0, mineWidth, 1 do
+		if i % 2 == 0 then
 			digLine(mineLength - 1)
 			turtle.turnLeft()
 			digForwards()
 			turtle.turnLeft()
-		end	
+		else
+			digLine(mineLength - 1)
+			turtle.turnRight()
+			digForwards()
+			turtle.turnRight()
+		end
 	end
 end
 
