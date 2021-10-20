@@ -34,30 +34,32 @@ end
 
 function digLayer(southpaw)
 	if southpaw == false then
-		for i = 0, mineWidth, 1 do
+		for i = 0, mineWidth - 2, 1 do
 			if i % 2 == 0 then
-				digLine(mineLength - 1)
+				digLine(mineLength - 2)
 				turtle.turnRight()
 				digForwards()
 				turtle.turnRight()
 			else
-				digLine(mineLength - 1)
+				digLine(mineLength - 2)
 				turtle.turnLeft()
 				digForwards()
 				turtle.turnLeft()
 			end
 		end
 	else
-		if i % 2 == 0 then
-			digLine(mineLength - 1)
-			turtle.turnLeft()
-			digForwards()
-			turtle.turnLeft()
-		else
-			digLine(mineLength - 1)
-			turtle.turnRight()
-			digForwards()
-			turtle.turnRight()
+		for i = 0, mineWidth - 2, 1 do
+			if i % 2 == 0 then
+				digLine(mineLength - 2)
+				turtle.turnLeft()
+				digForwards()
+				turtle.turnLeft()
+			else
+				digLine(mineLength - 2)
+				turtle.turnRight()
+				digForwards()
+				turtle.turnRight()
+			end
 		end
 	end
 end
