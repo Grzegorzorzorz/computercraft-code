@@ -21,31 +21,31 @@ function playNote(instrument, volume, pitch)
 end
 
 function rest(length)
-	for rests = 1, length, 1
+	for rests = 1, length, 1 do
 		sleep(1 / (bpm / 60))
 	end
 end
 
 function funkySequence()
-	playNote("guitar", songVolume, C2)
+	playNote("flute", songVolume, C2)
 	rest(1)
-	playNote("guitar", songVolume, C2)
+	playNote("flute", songVolume, C2)
 	rest(1)
-	playNote("guitar", songVolume, A1)
+	playNote("flute", songVolume, A1)
 	rest(1)
-	playNote("guitar", songVolume, C2)
+	playNote("flute", songVolume, C2)
 	rest(1)
-	playNote("guitar", songVolume, G1)
+	playNote("flute", songVolume, G1)
 	rest(1)
-	playNote("guitar", songVolume, G1)
+	playNote("flute", songVolume, G1)
 	rest(1)
-	playNote("guitar", songVolume, C2)
+	playNote("flute", songVolume, C2)
 	rest(1)
-	playNote("guitar", songVolume, F2)
+	playNote("flute", songVolume, F2)
 	rest(1)
-	playNote("guitar", songVolume, E2)
+	playNote("flute", songVolume, E2)
 	rest(1)
-	playNote("guitar", songVolume, C2)
+	playNote("flute", songVolume, C2)
 end
 
 function main()
